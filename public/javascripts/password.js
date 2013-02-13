@@ -12,6 +12,14 @@ $(document).ready(function() {
     if (submission[1].value.length != 8)
       errors.push("Password must be 8 characters in length");
     
+    // password doesn't contain any special characters
+    if (!submission[1].value.match(/[^A-Za-z0-9]+/))
+      errors.push("Password doesn't contain any special characers.");
+    
+    // password doesn't contain any numbers
+    if (!submission[1].value.match(/[0-9]+/))
+      errors.push("Password doesn't contain a number.");
+    
     // display errors
     if (errors.length > 0) {
       $("#error").html("<strong>Oh snap!</strong> Something went wrong.<ul>");
