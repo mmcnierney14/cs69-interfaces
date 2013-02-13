@@ -5,6 +5,6 @@ get '/' do
 	'Hello world!'
 end
 
-get '/pass' do
+get '/password' do
   haml :password
 end
