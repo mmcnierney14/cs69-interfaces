@@ -15,7 +15,10 @@ $(document).ready(function() {
   ];
   
   $('input#autocomplete-input').autocomplete({
-    source: people
+    source: people,
+    select: function(event, ui) {
+      $("#friends.well").append("<li>" + ui.item.value + "</li>").show();
+    }
   });
   
 });
