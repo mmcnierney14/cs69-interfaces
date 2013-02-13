@@ -1,0 +1,16 @@
+!!! 5
+%html
+  %head
+    %link{:href => "stylesheets/bootstrap.min.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.0/themes/base/jquery-ui.css", :rel => "stylesheet", :type => "text/css"}
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"}
+    %script{:src => "javascripts/autocomplete.js"}
+    %link{:href => "stylesheets/autocomplete.css", :rel => "stylesheet", :type => "text/css"}
+  %body
+    
+    #box
+      #box-heading
+        %h2.box-heading Add friends to this group
+      #box-body
+        %input#autocomplete-input{:type => "text", :placeholder => "Start typing to find friends...."}

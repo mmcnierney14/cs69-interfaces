@@ -8,3 +8,7 @@ end
 get '/password' do
   haml :password
 end
+
+get '/autocomplete' do
+  haml :autocomplete
+end
