@@ -6,11 +6,11 @@ $(document).ready(function() {
     
     // password and password confirmation don't match
     if (submission[1].value != submission[2].value)
-      errors.push("The password and the confirmation don't match");
+      errors.push("The password and the confirmation don't match.");
     
     // password isn't 8 characters
     if (submission[1].value.length != 8)
-      errors.push("Password must be 8 characters in length");
+      errors.push("Password must be 8 characters in length.");
     
     // password doesn't contain any special characters
     if (!submission[1].value.match(/[^A-Za-z0-9]+/))
@@ -23,11 +23,9 @@ $(document).ready(function() {
     // display errors
     if (errors.length > 0) {
       $("#error").html("<strong>Oh snap!</strong> Something went wrong.<ul>");
-      
       $.each(errors, function(index,value) {
         $("#error").append("<li>" + value + "</li>");
       });
-      
       $("#error").append("</ul>").show();
     }
     else {
