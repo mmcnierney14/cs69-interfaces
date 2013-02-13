@@ -17,8 +17,8 @@ $(document).ready(function() {
   $('input#autocomplete-input').autocomplete({
     source: people,
     select: function(event, ui) {
-      $("#friends.well").append("<li>" + ui.item.value + "</li>").show();
+      $("#empty-msg").hide();
+      $("#friends.table").append("<tr><td>" + ui.item.value + "</td></tr>").show();
     }
   });
-  
 });
