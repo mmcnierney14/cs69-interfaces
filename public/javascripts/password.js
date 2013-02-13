@@ -22,6 +22,7 @@ $(document).ready(function() {
     
     // display errors
     if (errors.length > 0) {
+      $("#success").hide();
       $("#error").html("<strong>Oh snap!</strong> Something went wrong.<ul>");
       $.each(errors, function(index,value) {
         $("#error").append("<li>" + value + "</li>");
@@ -31,6 +32,7 @@ $(document).ready(function() {
     else {
       errors = [];
       $("#error").hide();
+      $("#success").show();
     }
         
     event.preventDefault();
