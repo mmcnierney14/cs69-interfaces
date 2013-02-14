@@ -1,0 +1,10 @@
+#box {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#box h1 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}

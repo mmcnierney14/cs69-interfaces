@@ -12,3 +12,7 @@ end
 get '/autocomplete' do
   haml :autocomplete
 end
+
+get '/newspaper' do
+  haml :newspaper
+end
