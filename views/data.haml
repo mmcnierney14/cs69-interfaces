@@ -1,0 +1,22 @@
+!!! 5
+%html
+  %head
+    %link{:href => "stylesheets/bootstrap.min.css", :rel => "stylesheet", :type => "text/css"}
+    %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
+    %script{:src => "javascripts/password.js"}
+    %link{:href => "stylesheets/password.css", :rel => "stylesheet", :type => "text/css"}
+  %body
+
+    %h1 Passwords Data
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Username
+          %th Password
+          %th Password Confirm
+      %tbody
+        - @passwords.each do |password|
+          %tr
+            %td= password.username
+            %td= password.password
+            %td= password.password_confirm

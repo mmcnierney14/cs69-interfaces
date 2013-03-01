@@ -1,5 +1,8 @@
 require 'sinatra'
 require 'haml'
+require 'sinatra/activerecord'
+require './config/environments'
+require './models/password_data'
 
 get '/' do
 	'Hello world!'
@@ -10,13 +13,9 @@ get '/password' do
 end
 
 post '/password_data' do
-  # get sanitized input
-  username = params[:username].gsub(/\W+/, "")
-  password = params[:password].gsub(/\W+/, "")
-  
-  # write to file
-  open("./data/password-data.txt", "a") do |f|
-    f.puts "username: #{username}\t\t password: #{password}\n"
+  @password_data = PasswordData.new(params[:password_data])
+  if !@password_data.save
+    "Sorry, there was an error!"
   end
 end
 
@@ -25,8 +24,8 @@ get '/autocomplete' do
 end
 
 get '/data' do
-  data = IO.read("./data/password-data.txt")
-  data
+  @passwords = PasswordData.all
+  haml :data
 end
 
 get '/newspaper' do
