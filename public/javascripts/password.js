@@ -23,11 +23,12 @@ $(document).ready(function() {
     // display errors
     if (errors.length > 0) {
       $("#success").hide();
-      $("#error").html("<strong>Oh snap!</strong> Something went wrong.<ul>");
+      html = "<strong>Oh snap!</strong> Something went wrong.<ul>";
+      $("#error").html();
       $.each(errors, function(index,value) {
-        $("#error").append("<li>" + value + "</li>");
+        html += "<li>" + value + "</li>";
       });
-      $("#error").append("</ul>").show();
+      $("#error").html(html + "</ul>").show();
     }
     else {
       errors = [];
