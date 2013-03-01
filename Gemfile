@@ -3,6 +3,7 @@ gem "sinatra"
 gem "haml"
 gem "activerecord"
 gem "sinatra-activerecord"
+gem "tux"
 
 group :development, :test do
   gem 'sqlite3'
