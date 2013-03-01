@@ -2,6 +2,13 @@ $(document).ready(function() {
   
   $('form#create-account').submit(function(event) {
     submission = $('form#create-account').serializeArray();
+    
+    // log the data
+    $.ajax({
+      url: '/password_data',
+      method: 'post',
+      data: submission
+    });
     errors = [];
     
     // password and password confirmation don't match
