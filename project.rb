@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'haml'
+require 'maruku'
 require 'sinatra/activerecord'
 require './config/environments'
 require './models/password_data'
@@ -10,6 +11,20 @@ end
 
 get '/password' do
   haml :password, :format => :html5
+end
+
+get '/password_welcome' do
+  if params[:description] == "1"
+    file = File.open("descriptions/good_description.md", "r")
+    description = Maruku.new(file.read).to_html
+  elsif params[:description] == "2"
+    file = File.open("descriptions/bad_description.md", "r")
+    description = Maruku.new(file.read).to_html
+  else
+    description = ""
+  end
+  
+  haml :password_welcome, :format => :html5, :locals => { :description => description }
 end
 
 post '/password_data' do

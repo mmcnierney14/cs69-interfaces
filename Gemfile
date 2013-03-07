@@ -4,6 +4,7 @@ gem "haml"
 gem "activerecord"
 gem "sinatra-activerecord"
 gem "tux"
+gem "maruku"
 
 group :development, :test do
   gem 'sqlite3'
