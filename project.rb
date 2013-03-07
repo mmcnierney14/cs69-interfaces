@@ -4,6 +4,7 @@ require 'maruku'
 require 'sinatra/activerecord'
 require './config/environments'
 require './models/password_data'
+require './models/autocomplete_data'
 
 get '/' do
 	'Hello world!'
@@ -30,6 +31,13 @@ end
 post '/password_data' do
   @password_data = PasswordData.new(params[:password_data])
   if !@password_data.save
+    "Sorry, there was an error!"
+  end
+end
+
+post '/autocomplete_data' do
+  @autocomplete_data = AutocompleteData.new(params[:autocomplete_data])
+  if !@autocomplete_data.save
     "Sorry, there was an error!"
   end
 end

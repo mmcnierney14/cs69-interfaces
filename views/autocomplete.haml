@@ -7,15 +7,22 @@
     %script{:src => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"}
     %script{:src => "javascripts/autocomplete.js"}
     %script{:src => "javascripts/tag-it.min.js"}
+    %script{:src => "javascripts/underscore.min.js"}
     %link{:href => "stylesheets/autocomplete.css", :rel => "stylesheet", :type => "text/css"}
     %link{:href => "stylesheets/jquery.tagit.css", :rel => "stylesheet", :type => "text/css"}
   %body
     
     #box
       #box-heading
-        %h2.box-heading Add friends to this group
+        %h2.box-heading Send a personal message
       #box-body
-        %ul#friends-list
-      %h3 Group members
-      %em#empty-msg This group is empty....
-      %table#friends.table.table-striped{:style => "display: none;"}
+        %em
+          %strong Your username
+        %input#username{ :type => "text", :name => "autcomplete_data[username]" }
+        %em
+          %strong Recipients
+        %input#friends-list
+        %em
+          %strong Message
+        %textarea#message
+        %button#send.btn.btn-primary Send message
