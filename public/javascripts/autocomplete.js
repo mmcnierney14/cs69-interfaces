@@ -17,21 +17,10 @@ $(document).ready(function() {
     {value: "Concetta Lovette", friend: true}
   ];
   
-  $('input#autocomplete-input').autocomplete({
-    source: people,
-    select: function(event, ui) {
-      $("#empty-msg").hide();
-      $("#friends.table").append("<tr><td>" + ui.item.value + "</td></tr>").show();
+  $("ul#friends-list").tagit({
+    autocomplete: {
+      source: people
     }
-  }).data('uiAutocomplete')._renderItem = function(ul, item) {
-    html = "<a>" + item.value;
-    if (item.friend)
-      html = html + "*";
-    html = html + "</a>";
-      
-    return $("<li></li>")
-      .append(html)
-      .data("ui-autocomplete-item", item)
-      .appendTo(ul);
-  };
+  });
+  
 });

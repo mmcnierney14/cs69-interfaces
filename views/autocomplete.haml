@@ -6,14 +6,16 @@
     %script{:src => "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"}
     %script{:src => "http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"}
     %script{:src => "javascripts/autocomplete.js"}
+    %script{:src => "javascripts/tag-it.min.js"}
     %link{:href => "stylesheets/autocomplete.css", :rel => "stylesheet", :type => "text/css"}
+    %link{:href => "stylesheets/jquery.tagit.css", :rel => "stylesheet", :type => "text/css"}
   %body
     
     #box
       #box-heading
         %h2.box-heading Add friends to this group
       #box-body
-        %input#autocomplete-input{:type => "text", :placeholder => "Start typing to find friends...."}
+        %ul#friends-list
       %h3 Group members
       %em#empty-msg This group is empty....
       %table#friends.table.table-striped{:style => "display: none;"}
