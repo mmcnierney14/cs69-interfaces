@@ -23,11 +23,6 @@ get '/autocomplete' do
   haml :autocomplete
 end
 
-get '/data' do
-  @passwords = PasswordData.all
-  haml :data
-end
-
 get '/newspaper' do
   haml :newspaper
 end
