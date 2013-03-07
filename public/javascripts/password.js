@@ -3,6 +3,9 @@ $(document).ready(function() {
   $('form#create-account').submit(function(event) {
     submission = $('form#create-account').serializeArray();
     
+    // make the username uneditable after the first submission to get consistent data
+    $('input#inputUsername').attr('readonly', true);
+    
     // log the data
     $.ajax({
       url: '/password_data',
