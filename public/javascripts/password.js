@@ -19,7 +19,7 @@ $(document).ready(function() {
       errors.push("The password and the confirmation don't match.");
     
     // password isn't 8 characters
-    if (submission[1].value.length != 8)
+    if (submission[1].value.length < 8)
       errors.push("Password must be 8 characters in length.");
     
     // password doesn't contain any special characters
