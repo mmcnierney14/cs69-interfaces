@@ -39,6 +39,8 @@ $(document).ready(function() {
       data: submission
     });
     
+    window.location.replace("/thanks");
+    
     event.preventDefault();
     return false;
   });

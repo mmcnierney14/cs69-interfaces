@@ -57,6 +57,10 @@ get '/autocomplete' do
   haml :autocomplete
 end
 
+get '/thanks' do
+  haml :thanks
+end
+
 get '/newspaper' do
   haml :newspaper
 end
