@@ -10,11 +10,7 @@ $(document).ready(function() {
       source: people
     },
     beforeTagAdded: function(event, ui) {
-      if (_.indexOf(people, ui.tagLabel) < 0) {
-        return false;
-      }
-      
-      return true;
+      return _.indexOf(people, ui.tagLabel) >= 0;
     }
   });
   
