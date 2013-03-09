@@ -11,10 +11,21 @@ get '/' do
 end
 
 get '/password' do
-  haml :password, :format => :html5
+  version = params[:v] || 0
+  
+  if version == "1"
+    survey_link = "https://www.surveymonkey.com/s/password_restriction"
+  elsif version == "2"
+    survey_link = "https://www.surveymonkey.com/s/settingpassword"
+  else
+    survey_link = "https://www.surveymonkey.com/s/passwordsetting"
+  end
+  
+  haml :password, :format => :html5, :locals => { :survey_link => survey_link }
 end
 
 get '/password_welcome' do
+  version = params[:description] || "0"
   if params[:description] == "1"
     file = File.open("descriptions/good_description.md", "r")
     description = Maruku.new(file.read).to_html
@@ -25,7 +36,7 @@ get '/password_welcome' do
     description = ""
   end
   
-  haml :password_welcome, :format => :html5, :locals => { :description => description }
+  haml :password_welcome, :format => :html5, :locals => { :description => description, :version => version }
 end
 
 post '/password_data' do
