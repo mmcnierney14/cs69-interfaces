@@ -16,7 +16,7 @@ $(document).ready(function() {
   
   $("button#send").click(function(event) {
     friends = $("input#friends-list").tagit("assignedTags").join();
-    
+        
     submission = [
       {
         name: "autocomplete_data[username]",
@@ -35,7 +35,7 @@ $(document).ready(function() {
       data: submission
     });
     
-    window.location.replace("/thanks");
+    window.location.href = "/thanks";
     
     event.preventDefault();
     return false;
