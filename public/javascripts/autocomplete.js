@@ -1,9 +1,9 @@
 $(document).ready(function() {
   
-  var people = ["Johnnie Butter", "Jennell Branson","Geneva Dearborn",
-                "Rae Labrador", "Tonda Woodley", "Tobias Corprew",
-                "Valentine Noone", "Jenelle Fyock", "Roseann Body",
-                "Robbie Mcnemar", "Shantel Deems", "Concetta Lovette"];
+  var people = ["Johnnie Butter", "John Butter", "Johnny Better", "Johnnie Betters", "Jennell Branson", "Geneva Dearborn",
+                "Rae Labrador", "Raiye Librador", "Tonda Woodley", "Tonda Wheatley", "Tobias Corprew", "Tonias Wheprew", "Tony Wheatley",
+                "Valentine Noone", "Jenelle Fyock", "Roseann Body", "Rosie Jekes", "Rachel Body",
+                "Robbie Mcnemar", "Rob McNamera", "Robert McNaims", "Bob Mcnemar", "Shantel Deems", "Concetta Lovette"];
   
   $("input#friends-list").tagit({
     autocomplete: {
